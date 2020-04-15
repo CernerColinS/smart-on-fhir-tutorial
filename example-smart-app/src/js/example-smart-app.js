@@ -1,3 +1,5 @@
+import FHIR from "fhirclient";
+
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
@@ -67,7 +69,7 @@
       }
     }
 
-    window.FHIR.oauth2.ready(onReady, onError);
+    FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
   };
