@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
+    -->
+    <title>Example-SMART-App-iFrame-Wrapper</title>
+  </head>
+  <body>
+    <div id="constant_reminder">
+      <h1>iFrame Wrapper for SMART on FHIR example</h1>
+    </div>
+    <div id="iframe_wrapper"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+      //REACT JS GOES HERE
+      const domContainer = document.querySelector('#iframe_wrapper');
+      /*let url = window.URL;
+      let iss = url.searchParams.get("iss");
+      let launch = url.searchParams.get("launch");*/
+      let iframe = <iframe src="https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}" />;
+      ReactDOM.render(iframe, domContainer);
+    </script>
+  </body>
+</html>
