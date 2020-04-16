@@ -61,14 +61,14 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          return p;
+          drawVisualization(p);
         });
       } else {
         onError();
       }
     }
 
-    FHIR.oauth2.ready().then(onReady).then(drawVisualization).catch(onError);
+    FHIR.oauth2.ready().then(onReady).catch(onError);
 
   };
 
