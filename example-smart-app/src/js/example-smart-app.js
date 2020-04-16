@@ -2,12 +2,11 @@
   window.extractData = function() {
     function onError() {
       console.log('Loading error', arguments);
-      ret.reject();
     }
 
-    function onReady(smart)  {
-      if (smart.hasOwnProperty('patient')) {
-        var pt = smart.patient.read();
+    function onReady(client)  {
+      if (client.hasOwnProperty('patient')) {
+        var pt = client.patient.read();
         var query = new URLSearchParams();
     query.set("patient", client.patient.id);
     query.set("_count", 100); // Try this to fetch fewer pages
@@ -28,7 +27,7 @@
       var [patient, obv] = values;
       console.log(patient);
       console.log(obv);
-          var byCodes = smart.byCodes(obv, 'code');
+          var byCodes = client.byCodes(obv, 'code');
           var gender = patient.gender;
 
           var fname = '';
