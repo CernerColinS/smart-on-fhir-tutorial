@@ -5,6 +5,7 @@
     }
 
     function onReady(client)  {
+      console.log("Entering onReady");
       if (client.hasOwnProperty('patient')) {
         var pt = client.patient.read();
         var query = new URLSearchParams();
