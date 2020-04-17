@@ -25,7 +25,10 @@
       /*let url = window.URL;
       let iss = url.searchParams.get("iss");
       let launch = url.searchParams.get("launch");*/
-      let iframe = React.createElement('iframe', {src: `https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`});
+      let iframe = React.createElement('iframe',
+        {src: `https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`,
+         hight: "640px",
+	 width: "960px"});
       ReactDOM.render(iframe, domContainer);
     </script>
   </body>
