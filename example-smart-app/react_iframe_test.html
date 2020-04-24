@@ -36,8 +36,8 @@
       populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);
       const buttonList = document.querySelector('#button_list');
       let ehrLaunchButton = React.createElement('button',
-	      {onClick: function() { populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`)});
-      let patientLaunchButton = React.createElement('button', {onClick: function() { populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html`)}});
+	      {onClick: function() { populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);});
+      let patientLaunchButton = React.createElement('button', {onClick: function() { populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html`);}});
       ReactDOM.render(buttonList, ehrLaunchButton);
       ReactDOM.render(buttonList, patientLaunchButton);
     </script>
