@@ -39,12 +39,16 @@
       const buttonList = document.querySelector('#button_list');
       let ehrLaunchButton = React.createElement('button',
           {onClick: function() {
-    	      populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);},
-           name: 'EHR Launch'});
+                  populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);},
+           name: 'EHR Launch',
+           value: 'EHR Launch',
+           key: 1});
       let patientLaunchButton = React.createElement('button', 
           {onClick: function() {
-              populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html${iss}`);},
-           name: 'Patient Launch'});
+              populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${iss}`);},
+           name: 'Patient Launch',
+           value: 'Patient Launch',
+           key: 2});
       ReactDOM.render([ehrLaunchButton, patientLaunchButton], buttonList);
     </script>
   </body>
