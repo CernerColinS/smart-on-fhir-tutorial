@@ -41,8 +41,8 @@
       let patientLaunchButton = React.createElement('button', {onClick: function() {
 	      populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html`);}});
       console.log(buttonList);
-      ReactDOM.render(buttonList, ehrLaunchButton);
-      ReactDOM.render(buttonList, patientLaunchButton);
+      ReactDOM.render(ehrLaunchButton, buttonList);
+      ReactDOM.render(patientLaunchButton, buttonList);
     </script>
   </body>
 </html>
