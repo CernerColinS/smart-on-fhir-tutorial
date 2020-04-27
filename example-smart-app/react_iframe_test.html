@@ -24,7 +24,7 @@
       //REACT JS GOES HERE
       let populateIFrame = function(launchURL) {
         const iframeContainer = document.querySelector('#iframe_wrapper');
-        /*let url = window.URL;
+        /*let url = new URL(window.location + "");
         let iss = url.searchParams.get("iss");
         let launch = url.searchParams.get("launch");*/
         let iframe = React.createElement('iframe',
@@ -34,8 +34,6 @@
         ReactDOM.render(iframe, iframeContainer);
       }
       /*populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);*/
-      let url = new URL(window.location + "");
-      let iss = url.searchParams.get("iss");
       const buttonList = document.querySelector('#button_list');
       let ehrLaunchButton = React.createElement('button',
           {onClick: function() {
@@ -44,9 +42,10 @@
            value: 'EHR Launch',
            type: 'button',
            key: 1});
+      let patientISS = "https://fhir-myrecord.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca";
       let patientLaunchButton = React.createElement('button', 
           {onClick: function() {
-              populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${iss}`);},
+		  populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${patientISS}`);},
            name: 'Patient Launch',
            value: 'Patient Launch',
            type: 'button',
