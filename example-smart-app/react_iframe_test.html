@@ -33,7 +33,7 @@
            width: "960px"});
         ReactDOM.render(iframe, iframeContainer);
       }
-      populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);
+      /*populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);*/
       let url = new URL(window.location + "");
       let iss = url.searchParams.get("iss");
       const buttonList = document.querySelector('#button_list');
@@ -42,12 +42,14 @@
                   populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);},
            name: 'EHR Launch',
            value: 'EHR Launch',
+           type: 'button',
            key: 1});
       let patientLaunchButton = React.createElement('button', 
           {onClick: function() {
               populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${iss}`);},
            name: 'Patient Launch',
            value: 'Patient Launch',
+           type: 'button',
            key: 2});
       ReactDOM.render([ehrLaunchButton, patientLaunchButton], buttonList);
     </script>
