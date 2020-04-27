@@ -40,6 +40,7 @@
                   populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);},
            name: 'EHR Launch',
            value: 'EHR Launch',
+           text: 'EHR Launch',
            type: 'button',
            key: 1});
       let patientISS = "https://fhir-myrecord.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca";
@@ -48,6 +49,7 @@
 		  populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${patientISS}`);},
            name: 'Patient Launch',
            value: 'Patient Launch',
+           text: 'Patient Launch',
            type: 'button',
            key: 2});
       ReactDOM.render([ehrLaunchButton, patientLaunchButton], buttonList);
