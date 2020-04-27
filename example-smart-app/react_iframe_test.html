@@ -45,7 +45,7 @@
           {onClick: function() {
               populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html${iss}`);},
            name: 'Patient Launch'});
-      ReactDOM.render(ehrLaunchButton, patientLaunchButton, buttonList);
+      ReactDOM.render([ehrLaunchButton, patientLaunchButton], buttonList);
     </script>
   </body>
 </html>
