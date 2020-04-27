@@ -34,7 +34,7 @@
         ReactDOM.render(iframe, iframeContainer);
       }
       populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);
-      let url = window.URL;
+      let url = new URL(window.location + "");
       let iss = url.searchParams.get("iss");
       const buttonList = document.querySelector('#button_list');
       let ehrLaunchButton = React.createElement('button',
