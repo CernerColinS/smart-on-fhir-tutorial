@@ -14,7 +14,7 @@
     <div id="constant_reminder">
       <h1>iFrame Wrapper for SMART on FHIR example</h1>
     </div>
-    <div id="button_list"></div>
+    <div id="form_wrapper"></div>
     <div id="iframe_wrapper"></div>
 
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
@@ -30,23 +30,29 @@
         let iframe = React.createElement('iframe',
           {src: launchURL,
            height: "640px",
-           width: "960px"});
+           width: "960px",
+	   id: "embeddedIframe"});
         ReactDOM.render(iframe, iframeContainer);
       }
-      /*populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);*/
-      const buttonList = document.querySelector('#button_list');
-      let ehrLaunchButton = React.createElement('button',
-          {onClick: function() {
-                  populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);},
-           type: 'button',
-           key: 1}, 'EHR Launch');
-      let patientISS = "https://fhir-myrecord.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca";
-      let patientLaunchButton = React.createElement('button', 
-          {onClick: function() {
-		  populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=${patientISS}`);},
-           type: 'button',
-           key: 2}, 'Patient Launch');
-      ReactDOM.render([ehrLaunchButton, patientLaunchButton], buttonList);
+      populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);
+      const form_wrapper = document.querySelector('#form_wrapper');
+      let form = React.createElement('form',
+        {name: "testForm",
+         onsubmit: function() {
+	   let formData = {field: document.forms["testForm"]["field"].value,
+	                   value: document.forms["testForm"]["value"].value}
+           let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
+           iframeWindow.postMessage(formData, '*');
+	 }},
+        "field:",
+        'input',
+        {type: "text", name: "field"},
+        "value:",
+        'input',
+        {type: "text", name: "value"},
+        'input',
+        {type: "submit", name: "Update"});
+      ReactDOM.redner(form, form_wrapper);
     </script>
   </body>
 </html>

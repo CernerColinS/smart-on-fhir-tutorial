@@ -130,4 +130,11 @@
     $('#hdl').html(p.hdl);
   };
 
+  window.prepareListener = function() {
+    window.addEventListener("message", (event)=> {
+      //In a real implementation, you need to check event.origin
+      $(`#${event.data.field}`).html(event.data.value);
+    });
+  };
+
 })(window);
