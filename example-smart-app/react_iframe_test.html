@@ -44,14 +44,14 @@
            let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
            iframeWindow.postMessage(formData, '*');
 	 }},
-        "field:",
-        'input',
-        {type: "text", name: "field"},
+        ["field:",
+        React.createElement('input',
+          {type: "text", name: "field"}),
         "value:",
-        'input',
-        {type: "text", name: "value"},
-        'input',
-        {type: "submit", name: "Update"});
+        React.createElement('input',
+          {type: "text", name: "value"}),
+        React.createElement('input',
+          {type: "submit", name: "Update"}]);
       ReactDOM.render(form, form_wrapper);
     </script>
   </body>
