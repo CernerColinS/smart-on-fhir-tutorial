@@ -49,7 +49,7 @@
            onClick: function() {
 	     let formData = {field: document.forms["testForm"]["field"].value,
 	                     value: document.forms["testForm"]["value"].value}
-             let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
+             let iframeWindow = document.getElementById("embeddedIframe").contentWindow;
              iframeWindow.postMessage(formData, '*');}})]);
       ReactDOM.render(form, form_wrapper);
     </script>
