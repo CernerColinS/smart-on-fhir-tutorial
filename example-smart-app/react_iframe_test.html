@@ -50,7 +50,7 @@
 	     let formData = {field: document.forms["testForm"]["field"].value,
 	                     value: document.forms["testForm"]["value"].value}
              let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
-             iframeWindow.postMessage(formData, '*');})]);
+             iframeWindow.postMessage(formData, '*');}})]);
       ReactDOM.render(form, form_wrapper);
     </script>
   </body>
