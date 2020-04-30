@@ -37,13 +37,7 @@
       populateIFrame(`https://CernerColinS.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html${window.location.search}`);
       const form_wrapper = document.querySelector('#form_wrapper');
       let form = React.createElement('form',
-        {name: "testForm",
-         onsubmit: function() {
-	   let formData = {field: document.forms["testForm"]["field"].value,
-	                   value: document.forms["testForm"]["value"].value}
-           let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
-           iframeWindow.postMessage(formData, '*');
-	 }},
+        {name: "testForm"},
         ["field:",
         React.createElement('input',
           {type: "text", name: "field"}),
@@ -51,7 +45,12 @@
         React.createElement('input',
           {type: "text", name: "value"}),
         React.createElement('input',
-          {type: "button", name: "Update"})]);
+          {type: "button", value: "Update",
+           onClick: function() {
+	     let formData = {field: document.forms["testForm"]["field"].value,
+	                     value: document.forms["testForm"]["value"].value}
+             let iframeWindow = document.getElementById("embeddedIFrame").contentWindow;
+             iframeWindow.postMessage(formData, '*');})]);
       ReactDOM.render(form, form_wrapper);
     </script>
   </body>
